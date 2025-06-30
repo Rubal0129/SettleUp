@@ -4,212 +4,7 @@
   <meta charset="UTF-8" />
   <title>SettleUp - Group Expense Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #698acbac;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #4f6fb4ba;
-      color: #fff;
-      padding: 1rem 2rem;
-      text-align: center;
-      font-size: 2rem;
-      letter-spacing: 2px;
-    }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      padding: 2rem;
-    }
-    h2, h3 {
-      color: #2563eb;
-      margin-top: 0;
-    }
-    form, .group-options {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    input, select, button {
-      flex: 1 1 200px;
-      padding: 0.5rem;
-      border: 1px solid #d1d5db;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    button {
-      background: #2563eb;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    button:hover {
-      background: #1e40af;
-    }
-    .hidden {
-      display: none;
-    }
-    .prev-button {
-      background: #dc2626;
-      color: white;
-      border: none;
-      padding: 0.4rem 1rem;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      margin-bottom: 1rem;
-    }
-    .prev-button:hover {
-      background: #b91c1c;
-    }
-    #past-groups {
-      width: 70%;
-      margin: 0 auto 2rem auto;
-      padding: 1rem;
-      border: 1px solid #a7f3d0;
-      border-radius: 8px;
-      background-color: #e6f9e9;
-      text-align: center;
-      position: relative;
-    }
-    #past-group-list {
-      list-style: none;
-      padding-left: 0;
-      text-align: center;
-    }
-    .group-btn {
-      background-color: #bbf7d0 !important;
-      font-family: 'Courier New', Courier, monospace !important;
-      color: #000 !important;
-      font-weight: bold !important;
-      margin: 0.5rem auto !important;
-      display: block !important;
-      width: fit-content !important;
-      border: 1px solid #a7f3d0 !important;
-      border-radius: 5px !important;
-      transition: background 0.2s;
-    }
-    .group-btn:hover {
-      background-color: #86efac !important;
-    }
-    .group-options {
-      width: 70%;
-      margin: 0 auto 2rem auto;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      background: none;
-      border: none;
-      padding: 0;
-      gap: 0;
-    }
-    #create-group-btn {
-      background: transparent !important;
-      color: #22c55e !important;
-      font-family: 'Courier New', Courier, monospace !important;
-      font-weight: bold !important;
-      border: none !important;
-      box-shadow: none !important;
-      padding: 0.5rem 1.5rem !important;
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: color 0.2s, text-decoration 0.2s;
-      text-align: right;
-    }
-    #create-group-btn:hover {
-      text-decoration: underline;
-      color: #16a34a !important;
-      background: transparent !important;
-    }
-    .remove-btn {
-      background: #ef4444;
-      color: white;
-      border: none;
-      padding: 0.2rem 0.5rem;
-      margin-left: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    /* Copy Invite Link stays at top right */
-    #button-container {
-      display: flex;
-      justify-content: flex-end;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    #button-container button {
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      border: none;
-      width: auto;
-      flex: none;
-    }
-    #invite-btn {
-      background-color: #22c55e;
-      color: white;
-    }
-    #invite-btn:hover {
-      background-color: #16a34a;
-    }
-    /* Lower right corner for rename and delete */
-    #lower-right-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 0.5rem;
-      position: absolute;
-      right: 2rem;
-      bottom: 2rem;
-      z-index: 10;
-    }
-    #rename-btn {
-      background-color: #2563eb;
-      color: white;
-    }
-    #delete-btn {
-      background-color: #ef4444;
-      color: white;
-    }
-    #rename-btn:hover {
-      background-color: #1e40af;
-    }
-    #delete-btn:hover {
-      background-color: #b91c1c;
-    }
-    /* Make app-section relative for absolute lower-right positioning */
-    #app-section {
-      position: relative;
-      min-height: 600px;
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 1rem;
-      }
-      form, .group-options {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      #past-groups, .group-options {
-        width: 90%;
-      }
-      #lower-right-actions {
-        right: 1rem;
-        bottom: 1rem;
-      }
-      #app-section {
-        min-height: 700px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>SettleUp - Group Expense Tracker</header>
@@ -234,7 +29,6 @@
         <ul id="past-group-list"></ul>
       </div>
 
-      <!-- "Create New Group" button at the right side corner -->
       <div class="group-options">
         <button id="create-group-btn" onclick="showCreateGroup()">Create New Group +</button>
       </div>
@@ -277,7 +71,6 @@
       <h2>Group Members</h2>
       <ul id="group-members"></ul>
 
-      <!-- Lower right corner actions -->
       <div id="lower-right-actions">
         <button id="rename-btn" onclick="renameGroup()">✏ Rename Group</button>
         <button id="delete-btn" onclick="deleteGroup()">🗑 Delete Group</button>
@@ -286,8 +79,5 @@
   </div>
 
   <script src="script.js"> </script>
- 
-    
- 
 </body>
 </html>
